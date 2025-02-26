@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
 import AuthForm from "../components/AuthForm";
 
-const SignIn = () => {
+const SignIn = ({ setUser }) => {
   const navigate = useNavigate();
 
   const handleSignIn = async (formData) => {
@@ -10,6 +10,7 @@ const SignIn = () => {
       await login(formData);
       alert("로그인 되었습니다.");
       navigate("/");
+      setUser(true);
     } catch (error) {
       alert(
         `로그인 실패 : ${
