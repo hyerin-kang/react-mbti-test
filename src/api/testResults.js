@@ -16,6 +16,7 @@ export const getTestResultsById = async (id) => {
 //테스트 결과 추가하기 등록 : post
 export const createTestResult = async (resultData) => {
   //받아온 매개변수 resultData 를 데이터 바디에 어떤거 써주고싶은지 넣어준다.
+  console.log("resultData :", resultData);
   const response = await axios.post(`${API_URL}`, resultData);
   return response.data;
 };
